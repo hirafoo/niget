@@ -1,0 +1,299 @@
+html {
+    background-color: #FFFFFF;
+}
+
+body {
+}
+
+a:hover {
+    background-color: #D7F2FF;
+}
+a {
+    color: #696969;
+    text-decoration: underline;
+}
+a.none {
+    font-weight: bold;
+    font-size: small;
+    color: #000;
+    text-decoration: none;
+}
+
+a.none:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.mar10 {
+	margin: 10px;
+}
+.mar20 {
+	margin: 20px;
+}
+.mar-t {
+    margin-top: 20px;
+}
+.mar-v {
+    margin: 20px 0px;
+}
+.mar-b {
+    margin-bottom: 20px;
+}
+.mar-r {
+    margin-right: 10px;
+}
+.pad5 {
+    padding: 5px;
+}
+.pad10 {
+    padding: 10px;
+}
+
+#wrapper {
+    margin:0 auto;
+    width: 960px;
+}
+
+#header {
+	width: 940px;
+	height: 80px;
+	border-bottom: 1px solid #AAAAAA;
+	margin: 10px 10px 0px 10px;
+}
+
+#header .left {
+	margin:10px;
+	width: 300px;
+    height: 60px;
+    text-align: center;
+	float: left;
+	display:inline;
+}
+
+#header .center {
+	margin:10px 0px;
+	width: 300px;
+    text-align: center;
+	float: left;
+	display:inline;
+	background: #bbb;
+}
+
+#header .right {
+	margin:10px;
+	width: 300px;
+	float: left;
+	display:inline;
+	background: #bbb;
+}
+
+#menu {
+	width: 160px;
+	display:inline;
+	float: left;
+	margin: 10px 0px 10px 10px;
+	background: #FFFFFF
+
+}
+
+#menu dt {
+    background-color: #EEEEEE;
+	font-weight: bold;
+    padding: 2px;
+    margin-bottom: 5px; 
+}
+
+#menu dd {
+    font-size: small;
+	margin-left: 10px;
+}
+
+#container {
+	width: 770;
+	float: right;
+	margin: 10px;
+	display:inline;
+}
+
+#footer {
+    background-color: #EEEEEE;
+    clear:both;
+    margin:10px 10px 10px;
+    text-align:center;
+    width:940px;
+    border-top:1px solid #696969;
+}
+
+.w750 {
+    width: 750px;
+}
+
+.lightgreen {
+    background-color: #ADA;
+}
+
+.submit {
+    padding: 10px;
+    text-align: center;
+}
+
+.submit input {
+    width: 300px;
+    height: 50px;
+}
+
+.width-m {
+    width: 385px;
+}
+
+.add-form {
+    margin: 10px;
+}
+
+.search-form {
+    margin: 20px -1px;
+    background-color: #FFFFFF;
+}
+
+.list-form {
+    background-color: #B0E0E6;
+}
+
+.input th {
+    width: 100px;
+    font-weight: 100;
+    border: 5px solid #FFF;
+    padding: 5px 0px;
+    text-align: center;
+    background-image: url(/images/bg.gif);
+    background-repeat: repeat;
+}
+
+.input td {
+    width: 240px;
+    border: 5px solid #FFF;
+}
+
+.input_csv th {
+    width: 100px;
+    font-weight: 100;
+    border: 5px solid #FFF;
+    padding: 5px 0px;
+    text-align: center;
+    background-image: url(/images/bg.gif);
+    background-repeat: repeat;
+}
+
+.input_csv td {
+    width: 40px;
+    border: 5px solid #FFF;
+}
+
+.input_csv select {
+    width: 100px;
+}
+
+.font-b {
+    font-weight: bold;
+}
+
+.list {
+    margin-bottom: 10px;
+    border: 5px solid #FFF;
+    background-color: #EEEEEE;
+}
+
+.list th {
+    background:transparent url(/images/bg.gif) repeat scroll 0 0;
+    border:5px solid #FFF;
+    font-weight:100;
+    text-align:center;
+}
+
+.list td {
+    border: 5px solid #FFF;
+}
+
+.wid1 {
+    width: 30px;
+}
+.wid2 {
+    width: 60px;
+    height: 40px;
+}
+.wid3 {
+    width: 90px;
+}
+.wid4 {
+    width: 120px;
+}
+.wid-m {
+    width: 245px;
+}
+.wid-l {
+    width: 700px;
+}
+.wid10 {
+    width: 300px;
+}
+.wid11 {
+    width: 330px;
+}
+.wid12 {
+    width: 360px;
+}
+.wid14 {
+    width: 420px;
+}
+
+.h400 {
+    height: 400px;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.pager li {
+    width: 50px;
+    border: 1px solid #EEEEEE;
+    margin: 0px 1px;
+    text-align: center;
+    float: left;
+}
+
+.pager a {
+    display: block;
+}
+
+.pager a:hover {
+    background-color: #DEE;
+}
+
+.pager label {
+    margin-top: -23px;
+    display: block;
+    position: absolute;
+    padding: 16px 29px;
+}
+
+.pager label:hover {
+    border: 1px solid #666;
+}
+
+.ctitle {
+    padding-left: 10px;
+    border-left: 20px double #EEEEEE;
+}
+
+.question {
+    color: #C84B00;
+}
+
+.answer {
+    margin-bottom: 10px;
+}

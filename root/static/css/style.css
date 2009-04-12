@@ -1,0 +1,39 @@
+.clearfix:after {  
+	content: ".";  
+	display: block;  
+	visibility: hidden;  
+	height: 0.1px;  
+	font-size: 0.1em;  
+	line-height: 0;  
+	clear: both;  
+}
+
+*html .clearfix {
+	height : 1%;
+}
+
+.clearfix{
+	display: block;
+}
+
+.nav a {
+    display: block;
+    padding: 5px;
+}
+
+.nav a:hover {
+    border: 1px solid #666;
+    background-color: #DEE;
+}
+
+.nav label {
+    margin-top: -23px;
+    display: block;
+    position: absolute;
+    padding: 16px 29px;
+}
+
+.nav label:hover {
+    border: 1px solid #666;
+}
+

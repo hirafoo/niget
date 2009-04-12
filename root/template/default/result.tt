@@ -1,0 +1,10 @@
+        <div id="container">
+            <div class="mar10">
+                <div class="w750">
+                    [% msg %]
+                    <p class="mar-t">
+                        <a href="[%- c.req.referer -%]">戻る</a>
+                    </p>
+                </div>
+            </div>
+        </div>

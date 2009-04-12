@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="verify-v1" content="DBpvslF7s9FrudIzAYwcefzCb0GGF+zbnf30K3zUluQ=" />
+        <link rel="stylesheet" type="text/css" href="/css/reset-min.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <title>[% app_name %] - [% page_title ? page_title : base_title %]</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header" >
+                <div class="left">
+                    <a href="/" title="Niget system front end."><img src="/images/f_logo.gif"></a>
+                </div>
+            </div>
+            [% INCLUDE sidebar.tt -%]
+            [% content -%]
+            [% INCLUDE footer.tt -%]
+        </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3287586-8");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+    </body>
+</html>
+    

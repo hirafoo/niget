@@ -1,0 +1,16 @@
+        <div id="container">
+            <div class="mar10">
+                <div class="ctitle mar10 font-b">
+                    予約[%- mode %]
+                </div>
+                <div class="w750">
+                    <div class="search-form input">
+                        <form action="[%- c.uri_for('/reserves/add') -%]" method="post">
+                            <table>
+                                <tr><th>url</th><td><input class="width-m" type="text" name="url"></td><td><input type="submit" value="[%- mode -%]" title="[%- mode -%]" /></td></tr>
+                            </table>
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>

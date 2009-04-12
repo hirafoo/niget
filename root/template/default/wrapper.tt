@@ -1,0 +1,7 @@
+[%- app_name = 'にげっと' -%]
+[%- IF template.name.match('^email/') -%]
+    [%- content -%]
+[%- ELSE -%]
+    [%- base_title = 'ユーザ画面' -%]
+    [%- INCLUDE header.tt -%]
+[%- END -%]

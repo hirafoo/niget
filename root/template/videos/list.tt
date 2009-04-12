@@ -1,0 +1,37 @@
+        <div id="container">
+            <div class="mar10">
+                <div class="ctitle mar10 font-b clearfix">
+                    ビデオ一覧
+                </div>
+                <div class="w750">
+                    <div class="search-form input">
+                        <form action="[%- c.uri_for('/videos/list') -%]" method="get">
+                            <table>
+                                <tr><th>名前</th><td><input class="width-m" type="text" name="name"></td><td><input type="submit" value="検索" title="検索" /></td></tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div class="w750 autopagerize_page_element">
+                [%- INCLUDE pager.tt -%]
+                    <form action="[%- c.uri_for('/videos/delete') -%]" method="post">
+                        <table class="list">
+                            <tr>
+                                <th class="t-center wid2 nav">削除</th>
+                                <th class="t-center wid2 nav">ID</th>
+                                <th class="wid14">本体 / 名前</th>
+                            </tr>
+                            [%- WHILE (v = data.next) %]
+                            <tr>
+                                <td class="t-center wid2 nav"><input type="checkbox" name="delete_id" value="[% v.id %]" id="nav[% v.id %]"><label for="nav[% v.id %]"></label></td>
+                                <td class="t-center wid2 nav"><a href="[% c.uri_for('/videos/edit' v.id) %]">[% v.id %]</a></td>
+                                <td class="wid12"><a href="[% v.reserve.url %]" target="_blank">本体</a> / <a href="[%- v.url -%]">[% v.name %]</a></td>
+                            </tr>
+                            [%- END %]
+                        </table>
+                        <input type="submit" value="削除" title="削除" />
+                    </form>
+                <div class="autopagerize_insert_before"></div>
+                </div>
+            </div>
+        </div>

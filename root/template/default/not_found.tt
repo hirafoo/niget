@@ -1,0 +1,10 @@
+        <div id="container">
+            <div class="mar10">
+                <div class="mar10 ctitle font-b">
+                    そんなページ無いよ！<br />
+                </div>
+                <div class="w750">
+                    メニューかブラウザバックで戻ってね！
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,19 @@
+name: Niget::Web
+default_model: Niget::API
+Model::DBIC:
+  schema_class: Niget::Schema
+  connect_info:
+    - dbi:mysql:niget
+    - root
+View::TT:
+  INCLUDE_PATH:
+    - __path_to(root/template)__
+    - __path_to(root/template/default)__
+  TEMPLATE_EXTENSION: '.tt'
+  PRE_PROCESS: macro.txt
+  DEBUG: 1
+  ABSOLUTE: 1
+  WRAPPER: __path_to(root/template/default/wrapper.tt)__
+static:
+  include_path:
+    - __path_to(root/static)__

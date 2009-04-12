@@ -1,0 +1,3 @@
+[%- MACRO link_to(c) IF c -%]
+<a href="[%- c -%]" target="_blank">[%- c -%]</a>
+[%- END -%]

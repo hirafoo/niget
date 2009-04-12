@@ -1,0 +1,44 @@
+=head1 NAME
+
+Niget - ニコニコ動画のflvをゲットしよう
+
+=head1 What's this
+
+ニコニコ動画の任意の動画のURLを入力すると、ニコニコ動画のAPIより、動画本体（flv、swf）の
+URLを取得し、それをひたすら記録し続けます。
+
+ニコニコ動画のAPIを叩く部分は、小飼 弾さん作のスクリプトからパクりました。
+
+http://blog.livedoor.jp/dankogai/archives/50900305.html
+
+=head1 テストの実行の仕方
+
+prove -vl -It/lib t/script
+
+=head1 style
+
+「モダンPerl入門」とPixisを参考にして、Catalystからモデル分離をしたつもりです
+
+=head1 DB
+
+localhostのMySQLにrootでパスワード無しで繋ぐ設定になってます
+
+以下のファイルにコネクション情報を書いてますので、任意に設定してください
+
+config/database.yml
+
+config/app/niget_web.yaml
+
+DBの初期化にはrailsが必要なので、どうにかして使えるようにした後、以下のコマンドを打ちます
+
+rake db:create; rake db:migrate
+
+=head1 AUTHOR
+
+foosin 
+
+web -> http://d.hatena.ne.jp/foosin/
+
+mail -> hirafoo@gmail.com
+
+=cut

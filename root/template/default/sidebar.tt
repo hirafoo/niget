@@ -1,0 +1,18 @@
+    <div id="menu">
+            <div class="mar10">
+                <dl>
+                    <dt>案内・説明</dt>
+                    <dd><a href="[%- c.uri_for('/about') -%]">説明</a></dd>
+                    <dd class="mar-b"><a href="[%- c.uri_for('/author') -%]">作った人たち</a></dd>
+                    <dt>ビデオ</dt>
+                    <dd class="mar-b"><a href="[%- c.uri_for('/videos/list') -%]">一覧</a></dd>
+                    <dt>予約</dt>
+                    <dd><a href="[%- c.uri_for('/reserves/list') -%]">一覧</a></dd>
+                    <dd class="mar-b"><a href="[%- c.uri_for('/reserves/add') -%]">追加</a></dd>
+                    [%- IF c.debug %]
+                    <dt>utils</dt>
+                    <dd class="mar-b"><a href="/">create_dummy</a></dd>
+                    [%- END %]
+                </dl>
+            </div>
+        </div>

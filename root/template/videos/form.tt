@@ -1,0 +1,18 @@
+        <div id="container">
+            <div class="mar10">
+                <div class="mar20 font-b">
+                    ビデオ[%- mode %]
+                </div>
+                <div class="w750 lightgreen">
+                    <form action="[%- c.uri_for('/video/add') -%]" method="post">
+                        <table class="input">
+                            <tr><th>url</th><td><input class="width-m" type="text" name="url"></td></tr>
+                        </table>
+                        <div class="submit">
+                            <input type="submit" value="[%- mode -%]" title="[%- mode -%]" />
+                        </div>
+                    </form>
+                </div>
+[% content -%]
+            </div>
+        </div>

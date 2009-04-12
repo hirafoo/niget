@@ -1,0 +1,30 @@
+                    [%- SET prev_page = '前へ' -%]
+                    [%- SET next_page = '次へ' %]
+                    <p class="pad10">[% pager.total_entries %]件該当しました。[% pager.first %]件から[% pager.last %]件までを表示しています。</p>
+                    <div class="pager pad5 clearfix">
+                        <ul>
+                            [%- params = c.req.params -%]
+                            [%- IF pager.previous_page -%]
+                            [%- params.page = pager.previous_page %]
+                            <li><a href="[% c.req.uri_with({page => pager.previous_page}) %]">[%- prev_page -%]</a></li>
+                            [%- ELSE %]
+                            <li>[%- prev_page %]</li>
+                            [%- END -%]
+                            [%-  -%]
+                            [%- FOREACH page IN pager.pages_in_navigation -%]
+                            [%- IF page == pager.current_page %]
+                            <li class="on">[% page %]</li>
+                            [%- ELSE %]
+                            [%- params.page = page %]
+                            <li><a href="[% c.req.uri_with({page => page}) %]">[% page %]</a></li>
+                            [%- END %]
+                            [%- END -%]
+                            [%-  -%]
+                            [%- IF pager.next_page -%]
+                            [%- params.page = pager.next_page %]
+                            <li><a href="[% c.req.uri_with({page => pager.next_page}) %]" rel="next">[%- next_page -%]</a></li>
+                            [%- ELSE %]
+                            <li>[%- next_page %]</li>
+                            [%- END %]
+                        </ul>
+                    </div>

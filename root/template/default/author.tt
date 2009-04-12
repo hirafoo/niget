@@ -1,0 +1,21 @@
+        <div id="container">
+            <div class="mar10">
+                <div class="mar10 ctitle font-b">
+                    作った人たち<br />
+                </div>
+                <div class="w750 autopagerize_page_element">
+                    <table class="list wid-l">
+                        <tr><th>人</th><th>説明</th></tr>
+                        <tr>
+                            <td>hirafoo</td><td>メイン作成者。泣いて謝るまでdisられたいのでここを作成する、何か間違ってるperl monger見習い。</td>
+                        </tr>
+                        <tr>
+                            <td>waji</td><td>ビュー（html、css）作成者。週末に唐突にhirafooからビュー作成の依頼されて参加。</td>
+                        </tr>
+                        <tr>
+                            <td>kamipo</td><td>hirafooが質問する相手No.1。あちこちで活躍中。彼の作ったDBIC周りのモジュールを使うと二度とそれ無しでDBIC使う気にはならない。今回も助けてくれて感謝。</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
