@@ -1,0 +1,5 @@
+Model::DBIC:
+  schema_class: Niget::Schema
+  connect_info:
+    - dbi:mysql:niget_development
+    - root

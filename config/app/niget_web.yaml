@@ -1,10 +1,5 @@
 name: Niget::Web
 default_model: Niget::API
-Model::DBIC:
-  schema_class: Niget::Schema
-  connect_info:
-    - dbi:mysql:niget
-    - root
 View::TT:
   INCLUDE_PATH:
     - __path_to(root/template)__
