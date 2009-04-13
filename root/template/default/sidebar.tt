@@ -1,7 +1,7 @@
     <div id="menu">
             <div class="mar10">
                 <dl>
-                    <dt>案内・説明</dt>
+                    <dt>案内</dt>
                     <dd><a href="[%- c.uri_for('/about') -%]">説明</a></dd>
                     <dd class="mar-b"><a href="[%- c.uri_for('/author') -%]">作った人たち</a></dd>
                     <dt>動画</dt>

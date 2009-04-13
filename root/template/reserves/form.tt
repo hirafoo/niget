@@ -4,7 +4,7 @@
                     予約の[%- mode %]
                 </div>
                 落としたいニコニコ動画のURLを入力してね！<br />
-                例：http://www.nicovideo.jp/watch/sm0000000<br />
+                例：<tt>http://www.nicovideo.jp/watch/sm0000000</tt><br />
                 <div class="w750">
                     <div class="search-form input">
                         <form action="[%- c.uri_for('/reserves/add') -%]" method="post">
