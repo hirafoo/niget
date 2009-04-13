@@ -61,17 +61,17 @@ sub reserve2video {
 
     my $reserves = $self->find_all_by(visible => 1);
     while (my $r = $reserves->next) {
-        my $url = $r->url;
-        $url =~ m{/(\w+)$};
+        my $video_url = $r->url;
+        $video_url =~ m{/(\w+)$};
         my $video_id = $1;
 
         $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $account );
-        $ua->get($url);
+        $ua->get($video_url);
 
         my $res = $ua->get("http://www.nicovideo.jp/api/getflv?v=$video_id");
         my $q   = CGI->new( $res->content );
-        $url = $q->param('url');
-        unless ($url) {
+        $video_url = $q->param('url');
+        unless ($video_url) {
             p "failed to get video info: " . $res->content.
               "delete this data.";
             $r->update(visible => 0);
@@ -79,13 +79,16 @@ sub reserve2video {
         }
 
         my $name = $ua->get("http://ext.nicovideo.jp/api/getthumbinfo/$video_id");
-        $name = XMLin($name->content)->{thumb}->{title};
+        my $xml = XMLin($name->content);
+        $name = $xml->{thumb}->{title};
         $name = encode('utf-8',$name);
+        my $thumbnail_url = $xml->{thumb}->{thumbnail_url};
 
         Niget::ActiveRecord::Model('Video')->create({
             reserve_id => $r->id,
             name => $name,
-            url  => $url,
+            video_url  => $video_url,
+            thumbnail_url  => $thumbnail_url,
         });
 
         $r->update({visible => 0});

@@ -17,7 +17,7 @@ sub auto :Private {
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-    $c->stash(page_title => 'トップ画面');
+    $c->stash(page_title => 'ニコニコ動画をダウンロード！');
 }
 
 sub about :Local {

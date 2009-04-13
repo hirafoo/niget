@@ -7,7 +7,8 @@ use YAML::Syck;
 
 sub config {
     my $app_path = $ENV{APP_PATH} || '';
-    my $yaml = "$app_path$Niget::CONFIG_PATH/niget_web.yaml";
+    my $suffix = "_$ENV{SUFFIX}" || '';
+    my $yaml = "$app_path$Niget::CONFIG_PATH/niget_web$suffix.yaml";
     my $config = LoadFile($yaml);
 }
 

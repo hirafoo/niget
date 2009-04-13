@@ -1,13 +1,19 @@
         <div id="container">
             <div class="mar10">
                 <div class="ctitle mar10 font-b">
-                    予約[%- mode %]
+                    予約の[%- mode %]
                 </div>
+                落としたいニコニコ動画のURLを入力してね！<br />
+                例：http://www.nicovideo.jp/watch/sm0000000<br />
                 <div class="w750">
                     <div class="search-form input">
                         <form action="[%- c.uri_for('/reserves/add') -%]" method="post">
                             <table>
-                                <tr><th>url</th><td><input class="width-m" type="text" name="url"></td><td><input type="submit" value="[%- mode -%]" title="[%- mode -%]" /></td></tr>
+                                <tr>
+                                    <th>url</th>
+                                    <td><input class="width-m" type="text" name="url" /></td>
+                                    <td><input type="submit" value="[% mode %]" title="[% mode %]" /></td>
+                                </tr>
                             </table>
                         </form>
                      </div>

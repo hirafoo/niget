@@ -32,6 +32,7 @@
                     Catalyst<br />
                     DBIx::Class<br />
                     Template Toolkit<br />
+                    apache<br />
                     mod_perl<br />
                     MySQL<br />
                     Perl<br />
