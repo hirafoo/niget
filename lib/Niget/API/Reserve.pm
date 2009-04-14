@@ -72,16 +72,15 @@ sub reserve2video {
         my $q   = CGI->new( $res->content );
         $video_url = $q->param('url');
         unless ($video_url) {
-            p "failed to get video info: " . $res->content.
-              "delete this data.";
-            $r->update(visible => 0);
+            p "failed to get video info: " . $res->content. "delete this data.";
+            $r->update({deleted => 2});
             next;
         }
 
         my $name = $ua->get("http://ext.nicovideo.jp/api/getthumbinfo/$video_id");
         my $xml = XMLin($name->content);
         $name = $xml->{thumb}->{title};
-        $name = encode('utf-8',$name);
+        $name = encode('utf-8',$name) || '名前の取得に失敗しました。。。';
         my $thumbnail_url = $xml->{thumb}->{thumbnail_url} || '';
 
         Video->create({
