@@ -82,7 +82,7 @@ sub reserve2video {
         my $xml = XMLin($name->content);
         $name = $xml->{thumb}->{title};
         $name = encode('utf-8',$name);
-        my $thumbnail_url = $xml->{thumb}->{thumbnail_url};
+        my $thumbnail_url = $xml->{thumb}->{thumbnail_url} || '';
 
         Video->create({
             reserve_id    => $r->id,
