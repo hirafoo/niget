@@ -52,10 +52,10 @@ sub reserve2video {
     }
 
     $account = {
-        mail => $account->mail,
+        mail     => $account->mail,
         password => $account->password,
     };
-
+p $account;
     my $ua = LWP::UserAgent->new( keep_alive => 4 );
     $ua->cookie_jar( {} );
 
@@ -84,7 +84,7 @@ sub reserve2video {
         $name = encode('utf-8',$name);
         my $thumbnail_url = $xml->{thumb}->{thumbnail_url};
 
-        Niget::ActiveRecord::Model('Video')->create({
+        Video->create({
             reserve_id => $r->id,
             name => $name,
             video_url  => $video_url,
