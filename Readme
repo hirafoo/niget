@@ -27,7 +27,7 @@ localhostのMySQLにrootでパスワード無しで繋ぐ設定になってま�
 
 config/database.yml
 
-config/app/niget_web.yaml
+config/app/niget_web_[development|production].yaml
 
 DBの初期化にはrailsが必要なので、どうにかして使えるようにした後、以下のコマンドを打ちます
 

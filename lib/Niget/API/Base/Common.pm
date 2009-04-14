@@ -4,7 +4,6 @@ use Niget::Utils;
 use String::CamelCase qw/camelize decamelize/;
 use autobox::String::Inflector;
 use FormValidator::Simple;
-use base qw/Niget::API::Base::DBIC/;
 
 sub list {
     my ($self, $class, $params, $data) = @_;

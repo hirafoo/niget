@@ -55,14 +55,14 @@ sub reserve2video {
         mail     => $account->mail,
         password => $account->password,
     };
-p $account;
+
     my $ua = LWP::UserAgent->new( keep_alive => 4 );
     $ua->cookie_jar( {} );
 
     my $reserves = $self->find_all_by(visible => 1);
     while (my $r = $reserves->next) {
         my $video_url = $r->url;
-        $video_url =~ m{/(\w+)$};
+        $video_url =~ m{/(\w{0,2}\d+)};
         my $video_id = $1;
 
         $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $account );
@@ -84,14 +84,14 @@ p $account;
         $name = encode('utf-8',$name);
         my $thumbnail_url = $xml->{thumb}->{thumbnail_url};
 
-        Video->create({
-            reserve_id => $r->id,
-            name => $name,
-            video_url  => $video_url,
-            thumbnail_url  => $thumbnail_url,
-        });
+        #Video->create({
+        #    reserve_id => $r->id,
+        #    name => $name,
+        #    video_url  => $video_url,
+        #    thumbnail_url  => $thumbnail_url,
+        #});
 
-        $r->update({visible => 0});
+        #$r->update({visible => 0});
     }
 }
 
