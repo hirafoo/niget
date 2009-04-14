@@ -1,1 +1,1 @@
-*/5 * * * * env APP_PATH=/var/www/niget/ perl -I/var/www/niget/lib/var/www/niget/script/niget_reserve2video.pl
+*/5 * * * * env APP_PATH=/var/www/niget/ SUFFIX='production' perl -I/var/www/niget/lib /var/www/niget/script/niget_reserve2video.pl
