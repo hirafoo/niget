@@ -1,9 +1,9 @@
         <div id="container">
             <div class="mar10">
                 <div class="mar10 ctitle font-b">
-                    作った人たち<br />
+                    作った人たち
                 </div>
-                <div class="w750 autopagerize_page_element">
+                <div class="w750">
                     <table class="list wid-l">
                         <tr><th>人</th><th>説明</th></tr>
                         <tr>
@@ -17,5 +17,9 @@
                         </tr>
                     </table>
                 </div>
+                <div class="mar10 ctitle font-b">
+                    連絡先
+                </div>
+                <img src="/images/mail.gif">
             </div>
         </div>
