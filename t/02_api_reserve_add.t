@@ -1,7 +1,7 @@
 #!/bin/perl
 use Niget;
-use Niget::CLI;
 use Niget::ActiveRecord;
+use Niget::CLI;
 use Niget::Test::Base qw/no_plan/;
 
 filters {
@@ -36,7 +36,7 @@ msg: 何か変なURLだよ！
 === ok case
 --- input
 url: http://www.nicovideo.jp/watch/sm0000000
-deleted: 2
+deleted: 3
 --- expected
 msg: 追加したから5分待って！
 

@@ -1,16 +1,18 @@
 #!/bin/perl
+use Niget;
 use Niget::ActiveRecord;
+use Niget::CLI;
 use Niget::Test::Base qw/no_plan/;
 
-is ('Niget::API::Video', ref Video, 'like ActiveRecord');
-is ('Niget::API::Reserve', ref Reserve, 'like ActiveRecord');
+my @classes = qw/Account Reserve Video/;
 
-
-run_tests;
-__END__
-
-=== i is e ?
---- i
-2
---- e
-2
+no strict 'refs';
+# Hoge eq Niget::API::Hoge->new ?
+is ("Niget::API::$_", ref &$_, 'like ActiveRecord') 
+    for @classes;
+# Niget::API::Hoge->class eq Hoge ?
+is ($_, &$_->class, 'class') 
+    for @classes;
+# Niget::API::Hoge->resultset eq Niget::ResultSet::Hoge ?
+is ("Niget::ResultSet::$_", ref &$_->resultset, 'resultset(org)') 
+    for @classes;
