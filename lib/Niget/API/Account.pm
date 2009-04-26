@@ -8,17 +8,19 @@ use YAML::Syck;
 sub register_user {
     my $self = shift;
 
-    my $conf = LoadFile("$Niget::CONFIG_PATH/account.yaml");
+    my $accounts = LoadFile("$Niget::CONFIG_PATH/account.yaml")
+        or die qq{set 'mail' and 'password' in '$Niget::CONFIG_PATH/account.yaml'\n};
 
-    if ($conf->{mail} and my $data = $self->find_by(mail => $conf->{mail})) {
-        print "already user exists. update the data using account.yaml\n";
-        return $data->update($conf);
-    }
-    elsif ($conf->{mail} and $conf->{password}) {
-        return $self->create($conf);
+    for my $account (@$accounts) {
+        if ($account->{mail} and my $data = $self->find_by(mail => $account->{mail})) {
+            print "already user exists. update the data using account.yaml\n";
+            $data->update($account);
+        }
+        elsif ($account->{mail} and $account->{password}) {
+            $self->create($account);
+        }
     }
 
-    die qq{set 'mail' and 'password' in '$Niget::CONFIG_PATH/account.yaml'\n};
 }
 
 1;

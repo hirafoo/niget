@@ -45,16 +45,11 @@ sub add {
 sub reserve2video {
     my $self = shift;
 
-    my $account = Account->search->next;
-    unless ($account) {
+    my $accounts = Account->search;
+    unless ($accounts->count) {
         die qq{there is no account data.\n}.
             qq{at first, create account data by './script/niget_register_account.pl'\n};
     }
-
-    $account = {
-        mail     => $account->mail,
-        password => $account->password,
-    };
 
     my $ua = LWP::UserAgent->new( keep_alive => 4 );
     $ua->cookie_jar( {} );
@@ -65,17 +60,36 @@ sub reserve2video {
         $video_url =~ m{/(\w{0,2}\d+)};
         my $video_id = $1;
 
-        $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $account );
-        $ua->get($video_url);
+        my ($url_economy, $url_premium) = ('', '');
+        while (my $account = $accounts->next) {
 
-        my $res = $ua->get("http://www.nicovideo.jp/api/getflv?v=$video_id");
-        my $q   = CGI->new( $res->content );
-        $video_url = $q->param('url');
-        unless ($video_url) {
-            p "failed to get video info: " . $res->content. "delete this data.";
-            $r->update({deleted => 2});
-            next;
+            my $login_data = {
+                mail     => $account->mail,
+                password => $account->password,
+            };
+
+            $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $login_data );
+            $ua->get($video_url);
+
+            my $res = $ua->get("http://www.nicovideo.jp/api/getflv?v=$video_id");
+            my $q   = CGI->new( $res->content );
+            $video_url = $q->param('url');
+
+            if ($account->is_premium) {
+                $url_premium = $video_url;
+            }
+            else {
+                $url_economy = $video_url;
+            }
+
+            unless ($video_url) {
+                p "failed to get video info: " . $res->content. "delete this data.";
+                $r->update({deleted => 2});
+                next;
+            }
+            sleep 5;
         }
+        $accounts->reset;
 
         my $name = $ua->get("http://ext.nicovideo.jp/api/getthumbinfo/$video_id");
         my $xml = XMLin($name->content);
@@ -86,7 +100,8 @@ sub reserve2video {
         Video->create({
             reserve_id    => $r->id,
             name          => $name,
-            video_url     => $video_url,
+            url_economy   => $url_economy,
+            url_premium   => $url_premium,
             thumbnail_url => $thumbnail_url,
         });
 

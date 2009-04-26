@@ -1,3 +1,13 @@
 [%- MACRO link_to(c) IF c -%]
 <a href="[%- c -%]" target="_blank">[%- c -%]</a>
 [%- END -%]
+[%-
+
+-%]
+[%- MACRO link_or_blank(url, str) IF str -%]
+    [%- IF url %]
+        <a href="[% url %]">[% str %]</a>
+    [%- ELSE %]
+        何か取得に失敗しました。。。
+    [%- END %]
+[%- END -%]

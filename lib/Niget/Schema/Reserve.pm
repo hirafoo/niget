@@ -8,10 +8,10 @@ __PACKAGE__->resultset_attributes({
     cache => 1,
     where => {'reserve.deleted' => 0},
     order_by => 'reserve.created_at DESC',
-    prefetch => [qw/videos/],
+#    prefetch => [qw/videos/],
 });
 
-has_many 'videos';
+#has_many 'videos';
 
 package Niget::ResultSet::Reserve;
 use Niget::Utils;

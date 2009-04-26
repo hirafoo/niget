@@ -1,4 +1,4 @@
-package Niget::Web::Controller::Logic;
+package Niget::Web::Controller::Common;
 use Niget::ActiveRecord;
 use Niget::Utils;
 use String::CamelCase qw/camelize decamelize/;
