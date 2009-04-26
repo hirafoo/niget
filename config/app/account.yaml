@@ -1,3 +1,4 @@
 # ニコニコ動画にログインするときのメールアドレスとパスワードを記述
-mail: 
-password: 
+- mail: 
+  password: 
+  is_premium: 
