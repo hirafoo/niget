@@ -87,7 +87,7 @@ sub reserve2video {
                 $r->update({deleted => 2});
                 next;
             }
-            sleep 5;
+            sleep 60;
         }
         $accounts->reset;
 

@@ -12,7 +12,6 @@ sub list {
 
     my $page = delete $params{page} || 1;
     $data = $data->page($page);
-    my $pager = $data->pager;
     my $template = "$class/list.tt";
 
     if (%params) {
@@ -30,6 +29,8 @@ sub list {
             $data = $data->search({"$class.$column" => $params{$column}}, \%attrs);
         }
     }
+
+    my $pager = $data->pager;
 
     return {
         data     => $data,
