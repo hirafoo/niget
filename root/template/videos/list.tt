@@ -27,7 +27,7 @@
                                     <img src="[% v.thumbnail_url %]" />
                                 </td>
                                 <td>
-                                    <a href="[% v.reserve.url %]" target="_blank">[% v.name %]</a><br />
+                                    <a style="display: block;" href="[% v.reserve.url %]" target="_blank">[% v.name %]</a><br />
                                     [% link_or_blank(v.url_economy, 'エコノミー用') %] / [% link_or_blank(v.url_premium, 'プレミアム用') %]
                                 </td>
                             </tr>
