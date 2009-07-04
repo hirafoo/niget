@@ -1,7 +1,6 @@
 package Niget::ActiveRecord;
 use Niget::Utils;
 use Niget::Schema;
-use DirHandle;
 use UNIVERSAL::require;
 
 use base qw/Exporter/;
@@ -16,9 +15,8 @@ my %Model;
 BEGIN {
     my $app_path = $ENV{APP_PATH} || '';
     my $path = $app_path . './lib/Niget/Schema';
-    my $d = DirHandle->new($path);
-    while (defined (my $Class = $d->read)) {
-        next if $Class =~ /^\./;
+    opendir my $dh, $path or die "$path : $!";
+    for my $Class (grep !/^\.\.?/, readdir($dh)) {
         $Class =~ s/\.pm//;
         push @schemas, $Class;
         $Model{$Class} = undef;
@@ -26,6 +24,7 @@ BEGIN {
         no strict 'refs';
         *{$Class} = $ref;
     }
+    closedir $dh;
 }
 
 sub import {
