@@ -8,17 +8,17 @@
                         「ツール使えば落とせるけど、毎回使うの面倒だなー」<br />
                         「自分が落とした奴をどっかに記録しておきたいなー」<br />
                         「皆が注目して落としてる動画が知りたいなー」<br />
-                         <br />
-                         「それ、にげっとでできるよ！」<br />
-                         <br />
-                         まずはここに、落としたいニコニコ動画のURLを入力！<br />
-                         <form action="[%- c.uri_for('/reserves/add') -%]" method="post">
-                             <td><input class="width-m" type="text" name="url" /></td>
-                             <td><input type="submit" value="入力" title="入力" /></td>
-                         </form>
-                         <br />
-                         5分待ったら、左の「動画一覧」にニコニコ動画本体のURLが現れるから、そこから保存できるよ！<br />
-                         ただ、<b>一度ニコニコ動画本体にアクセスしてログインしてからでないと、動画は保存できないよ！</b>
+                        <br />
+                        「それ、にげっとでできるよ！」<br />
+                        <br />
+                        まずはここに、落としたいニコニコ動画のURLを入力！<br />
+                        <form action="[%- c.uri_for('/reserves/add') -%]" method="post">
+                            <td><input class="width-m" type="text" name="url" /></td>
+                            <td><input type="submit" value="入力" title="入力" /></td>
+                        </form>
+                        <br />
+                        5分待ったら、左の「動画一覧」にニコニコ動画本体のURLが現れるから、そこから保存できるよ！<br />
+                        ただ、<b>一度ニコニコ動画本体にアクセスしてログインしてからでないと、動画は保存できないよ！</b>
                     </div>
                 </div>
             </div>
