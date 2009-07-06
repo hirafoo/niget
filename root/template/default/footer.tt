@@ -1,7 +1,7 @@
-<div id="footer">
-    <address>created by <a href="http://d.hatena.ne.jp/foosin/" target="_blank">hirafoo</a></address>
-    <address>view support by waji</address>
-    <address>tech support by <a href="http://d.hatena.ne.jp/kamipo/" target="_blank">kamipo</a></address>
-    <br />
-    <address>powered by <a href="http://www.catalystframework.org/" target="_blank">Catalyst</a></address>
-</div>
+            <div id="footer">
+                <address>created by <a href="http://d.hatena.ne.jp/foosin/" target="_blank">hirafoo</a></address>
+                <address>view support by waji</address>
+                <address>tech support by <a href="http://d.hatena.ne.jp/kamipo/" target="_blank">kamipo</a></address>
+                <br />
+                <address>powered by <a href="http://www.catalystframework.org/" target="_blank">Catalyst</a></address>
+            </div>

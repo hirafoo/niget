@@ -1,44 +1,44 @@
-        <div id="container">
-            <div class="mar10">
-                <div class="mar10 ctitle font-b">
-                    Q &amp; A<br />
-                </div>
-                <div class="w750">
-                    <div class="question">Q. ここは何？</div>
-                    <div class="answer">A. ニコニコ動画の本体（flv,swf）を落とすのに役立つかもしれないサイトです。</div>
+            <div id="container">
+                <div class="mar10">
+                    <div class="mar10 ctitle font-b">
+                        Q &amp; A<br />
+                    </div>
+                    <div class="w750">
+                        <div class="question">Q. ここは何？</div>
+                        <div class="answer">A. ニコニコ動画の本体（flv,swf）を落とすのに役立つかもしれないサイトです。</div>
 
-                    <div class="question">Q. どうやって使うの？</div>
-                    <div class="answer">A. 「ダウンロード予約」の「予約の追加」から、動画を落としたい動画のURLを入力します。<br />
-                    5分経ったら「動画」の「動画の一覧」を見てください。動画へのリンクが現れます。</div>
+                        <div class="question">Q. どうやって使うの？</div>
+                        <div class="answer">A. 「ダウンロード予約」の「予約の追加」から、動画を落としたい動画のURLを入力します。<br />
+                        5分経ったら「動画」の「動画の一覧」を見てください。動画へのリンクが現れます。</div>
 
-                    <div class="question">Q. どうせなら動画をここから落としたいな</div>
-                    <div class="answer">A. 怒られるので無理っす。</div>
+                        <div class="question">Q. どうせなら動画をここから落としたいな</div>
+                        <div class="answer">A. 怒られるので無理っす。</div>
 
-                    <div class="question">Q. 動画が落とせないんだけど？</div>
-                    <div class="answer">A. ニコニコ動画の仕様上、一度ニコニコ動画の動画本体にアクセスしないと動画が落とせません。<br />
-                    「動画の一覧」のところに、「本体」というリンクがあるので、そこをクリックしてログインして下さい。その後に落とせるようになります。<br />
-                    これはニコニコ動画側の仕様なので、にげっと側ではどうにもなりません。</div>
+                        <div class="question">Q. 動画が落とせないんだけど？</div>
+                        <div class="answer">A. ニコニコ動画の仕様上、一度ニコニコ動画の動画本体にアクセスしないと動画が落とせません。<br />
+                        「動画の一覧」のところに、「本体」というリンクがあるので、そこをクリックしてログインして下さい。その後に落とせるようになります。<br />
+                        これはニコニコ動画側の仕様なので、にげっと側ではどうにもなりません。</div>
 
-                    <div class="question">Q. IEで見ると変になる個所があるんですが</div>
-                    <div class="answer">A. firefoxで見てください。</div>
+                        <div class="question">Q. IEで見ると変になる個所があるんですが</div>
+                        <div class="answer">A. firefoxで見てください。</div>
 
-                    <div class="question">Q. なんで「にげっと」？</div>
-                    <div class="answer">A. ニコニコからゲットする、を略してにげっとです。</div>
-                </div>
-                <div class="mar10 ctitle font-b">
-                    構成<br />
-                </div>
-                <div class="w750">
-                    Catalyst<br />
-                    DBIx::Class<br />
-                    Template Toolkit<br />
-                    apache<br />
-                    mod_perl<br />
-                    MySQL<br />
-                    Perl<br />
-                    Ruby on Rails（のmigration）<br />
-                    「モダンPerl入門」の考え<br />
-                    <a href="http://blog.livedoor.jp/dankogai/archives/50885358.html" target="_blank">小飼 弾さんのスクリプト</a>
+                        <div class="question">Q. なんで「にげっと」？</div>
+                        <div class="answer">A. ニコニコからゲットする、を略してにげっとです。</div>
+                    </div>
+                    <div class="mar10 ctitle font-b">
+                        構成<br />
+                    </div>
+                    <div class="w750">
+                        Catalyst<br />
+                        DBIx::Class<br />
+                        Template Toolkit<br />
+                        apache<br />
+                        mod_perl<br />
+                        MySQL<br />
+                        Perl<br />
+                        Ruby on Rails（のmigration）<br />
+                        「モダンPerl入門」の考え<br />
+                        <a href="http://blog.livedoor.jp/dankogai/archives/50885358.html" target="_blank">小飼 弾さんのスクリプト</a>
+                    </div>
                 </div>
             </div>
-        </div>

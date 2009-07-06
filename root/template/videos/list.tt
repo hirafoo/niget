@@ -1,42 +1,42 @@
-        <div id="container">
-            <div class="mar10">
-                <div class="ctitle mar10 font-b clearfix">
-                    動画の一覧
-                </div>
-                <div class="w750">
-                    <div class="search-form input">
-                        <form action="[%- c.uri_for('/videos/list') -%]" method="get">
-                            <table>
-                                <tr><th>名前</th><td><input class="width-m" type="text" name="name"></td><td><input type="submit" value="検索" title="検索" /></td></tr>
+            <div id="container">
+                <div class="mar10">
+                    <div class="ctitle mar10 font-b clearfix">
+                        動画の一覧
+                    </div>
+                    <div class="w750">
+                        <div class="search-form input">
+                            <form action="[%- c.uri_for('/videos/list') -%]" method="get">
+                                <table>
+                                    <tr><th>名前</th><td><input class="width-m" type="text" name="name"></td><td><input type="submit" value="検索" title="検索" /></td></tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                    <b>一度ニコニコ動画本体にアクセスしてログインしてからでないと、動画は保存できないよ！</b><br />
+                    <div class="w750 autopagerize_page_element">
+                    [%- INCLUDE pager.tt -%]
+                        <form action="[%- c.uri_for('/videos/delete') -%]" method="post">
+                            <table class="list">
+                                <tr>
+                                    <th>サムネイル</th>
+                                    <th>ニコニコ動画本体 / 動画URL</th>
+                                </tr>
+                                [%- WHILE (v = data.next) %]
+                                <tr>
+                                    <td>
+                                        <img src="[% v.thumbnail_url %]" />
+                                    </td>
+                                    <td>
+                                        <a href="[% v.reserve.url %]" target="_blank">ニコニコ動画本体</a>
+                                        <span style="display: block;"> [% v.name %]</span><br />
+                                        [%- link_or_blank(v.url_economy, 'エコノミー用') %] / [% link_or_blank(v.url_premium, 'プレミアム用') %]
+                                    </td>
+                                </tr>
+                                [%- END %]
                             </table>
+                            <input type="submit" value="削除" title="削除" />
                         </form>
+                    <div class="autopagerize_insert_before"></div>
                     </div>
                 </div>
-                <b>一度ニコニコ動画本体にアクセスしてログインしてからでないと、動画は保存できないよ！</b><br />
-                <div class="w750 autopagerize_page_element">
-                [%- INCLUDE pager.tt -%]
-                    <form action="[%- c.uri_for('/videos/delete') -%]" method="post">
-                        <table class="list">
-                            <tr>
-                                <th>サムネイル</th>
-                                <th>ニコニコ動画本体 / 動画URL</th>
-                            </tr>
-                            [%- WHILE (v = data.next) %]
-                            <tr>
-                                <td>
-                                    <img src="[% v.thumbnail_url %]" />
-                                </td>
-                                <td>
-                                    <a href="[% v.reserve.url %]" target="_blank">ニコニコ動画本体</a>
-                                    <span style="display: block;"> [% v.name %]</span><br />
-                                    [% link_or_blank(v.url_economy, 'エコノミー用') %] / [% link_or_blank(v.url_premium, 'プレミアム用') %]
-                                </td>
-                            </tr>
-                            [%- END %]
-                        </table>
-                        <input type="submit" value="削除" title="削除" />
-                    </form>
-                <div class="autopagerize_insert_before"></div>
-                </div>
             </div>
-        </div>

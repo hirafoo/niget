@@ -1,18 +1,18 @@
-    <div id="menu">
-            <div class="mar10">
-                <dl>
-                    <dt>案内</dt>
-                    <dd><a href="[%- c.uri_for('/about') -%]">説明</a></dd>
-                    <dd class="mar-b"><a href="[%- c.uri_for('/author') -%]">作った人たち</a></dd>
-                    <dt>動画</dt>
-                    <dd class="mar-b"><a href="[%- c.uri_for('/videos/list') -%]">動画の一覧</a></dd>
-                    <dt>ダウンロード予約</dt>
-                    <dd><a href="[%- c.uri_for('/reserves/list') -%]">予約の一覧</a></dd>
-                    <dd class="mar-b"><a href="[%- c.uri_for('/reserves/add') -%]">予約の追加</a></dd>
-                    [%- IF c.debug %]
-                    <dt>utils</dt>
-                    <dd class="mar-b"><a href="/">create_dummy</a></dd>
-                    [%- END %]
-                </dl>
+            <div id="menu">
+                <div class="mar10">
+                    <dl>
+                        <dt>案内</dt>
+                        <dd><a href="[%- c.uri_for('/about') -%]">説明</a></dd>
+                        <dd class="mar-b"><a href="[%- c.uri_for('/author') -%]">作った人たち</a></dd>
+                        <dt>動画</dt>
+                        <dd class="mar-b"><a href="[%- c.uri_for('/videos/list') -%]">動画の一覧</a></dd>
+                        <dt>ダウンロード予約</dt>
+                        <dd><a href="[%- c.uri_for('/reserves/list') -%]">予約の一覧</a></dd>
+                        <dd class="mar-b"><a href="[%- c.uri_for('/reserves/add') -%]">予約の追加</a></dd>
+                        [%- IF c.debug %]
+                        <dt>utils</dt>
+                        <dd class="mar-b"><a href="/">create_dummy</a></dd>
+                        [%- END %]
+                    </dl>
+                </div>
             </div>
-        </div>
