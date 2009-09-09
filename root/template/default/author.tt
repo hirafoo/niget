@@ -21,5 +21,10 @@
                         連絡先
                     </div>
                     <img src="/images/mail.gif">
+                    <div class="mar10 ctitle font-b">
+                        他に作ったもの
+                    </div>
+                    <a href="http://commetter.net/" target="_blank">こめったー</a><br />
+                    Twitterで特定のサイトに向けてコメントができる。<br />皆がそのサイトについてどんなつぶやきをしているのかが分かります。
                 </div>
             </div>
