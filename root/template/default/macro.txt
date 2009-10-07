@@ -6,7 +6,7 @@
 -%]
 [%- MACRO link_or_blank(url, str) IF str -%]
 [%- IF url %]
-                                        <a href="[% url %]">[% str %]</a>
+                                        <a href="[% url %]" rel="nofollow">[% str %]</a>
 [%- ELSE %]
 何か取得に失敗しました。。。
 [%- END %]
