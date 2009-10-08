@@ -14,6 +14,19 @@
                 <div class="left">
                     <a href="/" title="Niget system front end."><img src="/images/f_logo.gif"></a>
                 </div>
+                <div>
+                    <script type="text/javascript"><!--
+                        google_ad_client = "pub-1525936459565040";
+                        /* 468x60, 作成済み 09/10/08 */
+                        google_ad_slot = "8010369965";
+                        google_ad_width = 468;
+                        google_ad_height = 60;
+                        //-->
+                    </script>
+                    <script type="text/javascript"
+                        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+                </div>
             </div>
 [% INCLUDE sidebar.tt -%]
 [% content -%]
