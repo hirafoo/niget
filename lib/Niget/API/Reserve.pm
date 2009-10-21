@@ -55,6 +55,7 @@ sub reserve2video {
     $ua->cookie_jar( {} );
 
     my $reserves = $self->find_all_by(visible => 1);
+    $reserves->update({visible => 0});
     while (my $r = $reserves->next) {
         my $video_url = $r->url;
         $video_url =~ m{/(\w{0,2}\d+)};
@@ -104,8 +105,6 @@ sub reserve2video {
             url_premium   => $url_premium,
             thumbnail_url => $thumbnail_url,
         });
-
-        $r->update({visible => 0});
     }
 }
 
