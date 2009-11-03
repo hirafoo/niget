@@ -35,6 +35,7 @@ sub watch :Local :Args(1) {
 
     $c->stash(
         nico_id => $nico_id,
+        page_title => 'ちょっと見る',
     )
 }
 
