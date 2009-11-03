@@ -15,5 +15,6 @@
 
 -%]
 [%- MACRO date(dt) BLOCK -%]
-[% dt.year %]年[% dt.month %]月[% dt.day %]日 [% dt.hour %]:[% dt.minute %]
+[%- USE p0 = format('%02d') -%]
+[% dt.year %]年[% dt.month %]月[% dt.day %]日 [% dt.hour %]:[% p0(dt.minute) %]
 [%- END -%]

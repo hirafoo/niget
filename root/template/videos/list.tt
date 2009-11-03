@@ -22,12 +22,16 @@
                                     <th>動画</th>
                                 </tr>
                                 [%- WHILE (v = data.next) %]
+                                [%- nico_url = v.reserve.url -%]
+                                [%- nico_id = nico_url.split('/').-1 -%]
                                 <tr>
                                     <td>
                                         <img src="[% v.thumbnail_url %]" />
                                     </td>
                                     <td>
-                                        <a href="[% v.reserve.url %]" target="_blank" rel="nofollow">[% v.name %]</a>
+                                        [% v.name %]<br />
+                                        <a href="[% v.reserve.url %]" target="_blank" rel="nofollow">ニコニコ動画</a> / 
+                                        <a href="/watch/[% nico_id %]" target="_blank" rel="nofollow">ちょっと見る</a>
                                         <span style="display: block;">登録：[% date(v.created_at) %]</span><br />
                                         [%- link_or_blank(v.url_economy, 'エコノミー用') %] / [% link_or_blank(v.url_premium, 'プレミアム用') %]
                                     </td>

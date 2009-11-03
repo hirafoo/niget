@@ -30,6 +30,14 @@ sub author :Local {
     $c->stash(page_title => '作った人たち');
 }
 
+sub watch :Local :Args(1) {
+    my ($self, $c, $nico_id) = @_;
+
+    $c->stash(
+        nico_id => $nico_id,
+    )
+}
+
 sub default :Path {
     my ( $self, $c ) = @_;
     $c->stash(
