@@ -19,7 +19,7 @@
                             <table class="list">
                                 <tr>
                                     <th>サムネイル</th>
-                                    <th>ニコニコ動画本体 / 動画URL</th>
+                                    <th>動画</th>
                                 </tr>
                                 [%- WHILE (v = data.next) %]
                                 <tr>
