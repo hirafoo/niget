@@ -24,7 +24,13 @@
                     <div class="mar10 ctitle font-b">
                         他に作ったもの
                     </div>
-                    <a href="http://commetter.net/" target="_blank">こめったー</a><br />
-                    Twitterで特定のサイトに向けてコメントができる。<br />皆がそのサイトについてどんなつぶやきをしているのかが分かります。
+                    <div class="mar10">
+                        <a href="http://commetter.net/" target="_blank">こめったー</a><br />
+                        Twitterで特定のサイトに向けてコメントができる。<br />皆がそのサイトについてどんなつぶやきをしているのかが分かります。
+                    </div>
+                    <div class="mar10">
+                        <a href="http://tiwa.hirafoo.net/" target="_blank">違いが分かりません</a><br />
+                        「同じようなアレとコレは何が違うのか分からない！」そんなものの違いを教えてもらいます。
+                    </div>
                 </div>
             </div>
