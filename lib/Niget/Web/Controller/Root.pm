@@ -34,16 +34,27 @@ sub watch :Local :Args(1) {
     my ($self, $c, $nico_id) = @_;
 
     $c->stash(
-        nico_id => $nico_id,
+        nico_id    => $nico_id,
         page_title => 'ちょっと見る',
     )
 }
 
+sub get :Local :Args(2) {
+    my ($self, $c, $video_id, $mode) = @_;
+
+    my $video = Video->find($video_id) or return $c->res->redirect('/');
+    my $url = ($mode == 1) ? $video->url_economy :
+              ($mode == 2) ? $video->url_premium :
+              '/';
+    $c->res->redirect($url);
+}
+
 sub default :Path {
     my ( $self, $c ) = @_;
+
     $c->stash(
         page_title => '？？？',
-        template => 'not_found.tt',
+        template   => 'not_found.tt',
     );
 }
 

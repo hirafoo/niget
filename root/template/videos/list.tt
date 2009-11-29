@@ -33,7 +33,8 @@
                                         <a href="[% v.reserve.url %]" target="_blank" rel="nofollow">ニコニコ動画</a> / 
                                         <a href="/watch/[% nico_id %]" target="_blank" rel="nofollow">ちょっと見る</a>
                                         <span style="display: block;">登録：[% date(v.created_at) %]</span><br />
-                                        [%- link_or_blank(v.url_economy, 'エコノミー用') %] / [% link_or_blank(v.url_premium, 'プレミアム用') %]
+                                        [% link_to('エコノミー用', {href => '/get/' _ v.id _ '/1/'} ) %] /
+                                        [% link_to('プレミアム用', {href => '/get/' _ v.id _ '/2/'} ) %]
                                     </td>
                                 </tr>
                                 [%- END %]

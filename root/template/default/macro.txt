@@ -1,5 +1,7 @@
-[%- MACRO link_to(c) BLOCK -%]
-<a href="[%- c -%]" target="_blank">[%- c -%]</a>
+[%- USE LinkTo -%]
+[%- MACRO link_to(text, args) BLOCK -%]
+[%- args = args ? args : {} -%]
+[%- LinkTo.link_to(text, args) -%]
 [%- END -%]
 [%-
 
