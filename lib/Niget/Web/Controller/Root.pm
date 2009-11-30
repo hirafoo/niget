@@ -39,6 +39,13 @@ sub watch :Local :Args(1) {
     )
 }
 
+sub jump :Local :Args(1) {
+    my ($self, $c, $video_id) = @_;
+
+    my $video = Video->find($video_id) or return $c->res->redirect('/');
+    $c->res->redirect($video->reserve->url);
+}
+
 sub get :Local :Args(2) {
     my ($self, $c, $video_id, $mode) = @_;
 

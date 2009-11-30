@@ -30,11 +30,11 @@
                                     </td>
                                     <td>
                                         [% v.name %]<br />
-                                        <a href="[% v.reserve.url %]" target="_blank" rel="nofollow">ニコニコ動画</a> / 
+                                        <a href="/jump/[% v.id %]" target="_blank" rel="nofollow">ニコニコ動画</a> /
                                         <a href="/watch/[% nico_id %]" target="_blank">ちょっと見る</a>
                                         <span style="display: block;">登録：[% date(v.created_at) %]</span><br />
-                                        [% link_to('エコノミー用', {href => '/get/' _ v.id _ '/1/', rel => 'nofollow'} ) %] /
-                                        [% link_to('プレミアム用', {href => '/get/' _ v.id _ '/2/', rel => 'nofollow'} ) %]
+                                        [% link_to('エコノミー用', {href => '/get/' _ v.id _ '/1', rel => 'nofollow'} ) %] /
+                                        [% link_to('プレミアム用', {href => '/get/' _ v.id _ '/2', rel => 'nofollow'} ) %]
                                     </td>
                                 </tr>
                                 [%- END %]
