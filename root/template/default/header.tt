@@ -4,6 +4,7 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="/css/set.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="ニコニコ動画, ダウンロード, 保存">
         <meta name="verify-v1" content="DBpvslF7s9FrudIzAYwcefzCb0GGF+zbnf30K3zUluQ=" />
         <meta name="y_key" content="7a93cc2cd3eac064" />
         <title>[% app_name %] - [% page_title ? page_title : base_title %]</title>
