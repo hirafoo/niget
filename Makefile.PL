@@ -5,6 +5,14 @@ use inc::Module::Install;
 name 'Niget-Web';
 all_from 'lib/Niget/Web.pm';
 
+requires 'Template';
+requires 'DBIx::Class';
+requires 'DBIx::Class::Schema::Loader';
+requires 'DateTime';
+requires 'Data::Page::Navigation';
+requires 'autobox::String::Inflector';
+requires 'Catalyst::Plugin::FillInForm';
+
 requires 'Catalyst::Runtime' => '5.7014';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
