@@ -2,8 +2,8 @@
 # expected.  you have been warned
 use inc::Module::Install;
 
-name 'Niget-Web
-all_from 'lib/Niget/Web.pm
+name 'Niget-Web';
+all_from 'lib/Niget/Web.pm';
 
 requires $_
     for qw/
