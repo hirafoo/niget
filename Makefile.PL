@@ -2,24 +2,30 @@
 # expected.  you have been warned
 use inc::Module::Install;
 
-name 'Niget-Web';
-all_from 'lib/Niget/Web.pm';
+name 'Niget-Web
+all_from 'lib/Niget/Web.pm
 
-requires 'Template';
-requires 'DBIx::Class';
-requires 'DBIx::Class::Schema::Loader';
-requires 'DateTime';
-requires 'Data::Page::Navigation';
-requires 'autobox::String::Inflector';
-requires 'Catalyst::Plugin::FillInForm';
+requires $_
+    for qw/
+        autobox::String::Inflector
+        parent
+        DateTime
+        Data::Page::Navigation
+        DBIx::Class
+        DBIx::Class::Schema::Loader
+        Catalyst::Action::RenderView
+        Catalyst::Engine::HTTP::Restarter
+        Catalyst::Devel
+        Catalyst::Plugin::ConfigLoader
+        Catalyst::Plugin::FillInForm
+        Catalyst::Plugin::Static::Simple
+        Config::General
+        Task::Catalyst
+        Template
+    /;
 
 requires 'Catalyst::Runtime' => '5.7014';
-requires 'Catalyst::Plugin::ConfigLoader';
-requires 'Catalyst::Plugin::Static::Simple';
-requires 'Catalyst::Action::RenderView';
-requires 'parent';
-requires 'Config::General'; # This should reflect the config file format you've chosen
-                 # See Catalyst::Plugin::ConfigLoader for supported formats
+
 catalyst;
 
 install_script glob('script/*.pl');
