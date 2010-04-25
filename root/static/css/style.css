@@ -1,11 +1,11 @@
-.clearfix:after {  
-	content: ".";  
-	display: block;  
-	visibility: hidden;  
-	height: 0.1px;  
-	font-size: 0.1em;  
-	line-height: 0;  
-	clear: both;  
+.clearfix:after {
+	content: ".";
+	display: block;
+	visibility: hidden;
+	height: 0.1px;
+	font-size: 0.1em;
+	line-height: 0;
+	clear: both;
 }
 
 *html .clearfix {
