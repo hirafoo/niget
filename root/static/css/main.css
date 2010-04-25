@@ -111,7 +111,7 @@ a.none:hover {
 #container {
 	width: 770;
 	float: right;
-	margin: 10px;
+	margin: 10px 0px 0px 10px;
 	display:inline;
 }
 
