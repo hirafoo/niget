@@ -10,7 +10,7 @@ use HTTP::Headers;
 use CGI;
 use Crypt::SSLeay;
 use XML::Simple;
-use Encode;
+use Encode qw/encode_utf8/;
 
 use URI::Escape;
 
@@ -100,7 +100,7 @@ sub reserve2video {
         my $name = $ua->get("http://ext.nicovideo.jp/api/getthumbinfo/$video_id");
         my $xml = XMLin($name->content);
         $name = $xml->{thumb}->{title};
-        $name = encode('utf-8',$name) || '名前の取得に失敗しました。。。';
+        $name = encode_utf8($name) || '名前の取得に失敗しました。。。';
         my $thumbnail_url = $xml->{thumb}->{thumbnail_url} || '';
 
         Video->create({

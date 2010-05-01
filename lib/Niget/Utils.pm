@@ -15,13 +15,17 @@ sub import {
     no strict 'refs';
     *{"$pkg\::p"} = \&p;
     *{"$pkg\::now"} = \&now;
+    *{"$pkg\::utf"} = \&utf;
 }
 
 sub p { 
-    warn Dumper shift;# if $ENV{CATALYST_DEBUG} or $ENV{P_DEBUG};
+    warn Dumper @_;
+    my @c = caller;
+    print STDERR "  at $c[1]:$c[2]\n\n"
 }
 
 my $tz = DateTime::TimeZone->new( name => 'local' );
 sub now { DateTime->now(time_zone => $tz) }
+sub utf { $Niget::UTF }
     
 1;

@@ -18,8 +18,13 @@ sub list {
         $class = $class->singularize;
         map {
             my $v = $params{$_};
-            $params{$_} = {like => "\%$v%"} if $v;
-            delete $params{$_} unless $v;
+            if ($v) {
+                my @words = split /\s+|\Q　\E/, $v;
+                for my $w (grep /.+/, @words) {
+                    $data = $data->search({"$class.$_" => {like => "\%$w%"}});
+                }
+            }
+            delete $params{$_};# unless $v;
         } qw/name url/;
 
         my %attrs;
