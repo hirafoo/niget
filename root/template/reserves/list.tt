@@ -25,7 +25,7 @@
                                 <tr>
                                     <td class="t-center wid2 nav"><input type="checkbox" name="delete_id" value="[% r.id %]" id="nav[% r.id %]"><label for="nav[% r.id %]"></label></td>
                                     <td class="t-center wid2 nav"><a href="[% c.uri_for('/reserves/edit' r.id) %]">[% r.id %]</a></td>
-                                    <td class="wid12">[%- link_to(r.url) -%]</td>
+                                    <td class="wid12">[%- link_to(r.url, {href => r.url, target => "_blank"}) -%]</td>
                                 </tr>
                                 [%- END %]
                             </table>
