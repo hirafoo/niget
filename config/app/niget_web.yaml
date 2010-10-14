@@ -9,6 +9,9 @@ View::TT:
   DEBUG: 1
   ABSOLUTE: 1
   WRAPPER: __path_to(root/template/default/wrapper.tt)__
+View::JSON:
+  allow_callback: 1
+  callback_param: 'cb'
 static:
   include_path:
     - __path_to(root/static)__

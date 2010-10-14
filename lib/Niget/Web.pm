@@ -3,6 +3,7 @@ use Niget;
 use Niget::Utils;
 use Niget::Schema;
 use Encode qw/find_encoding/;
+use Encode::JavaScript::UCS;
 
 use Catalyst::Runtime '5.70';
 use parent qw/Catalyst/;
@@ -25,6 +26,7 @@ sub setup {
 
     my $connect_info = __PACKAGE__->config->{'Model::DBIC'}->{connect_info};
     $Niget::SCHEMA = Niget::Schema->connection(@$connect_info);
+    $Niget::JS  = find_encoding('JavaScript-UCS');
     $Niget::UTF = find_encoding('utf-8');
 }
 

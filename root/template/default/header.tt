@@ -7,6 +7,11 @@
         <meta name="keywords" content="ニコニコ動画,ニコ動,ダウンロード,保存">
         <meta name="verify-v1" content="DBpvslF7s9FrudIzAYwcefzCb0GGF+zbnf30K3zUluQ=" />
         <meta name="y_key" content="7a93cc2cd3eac064" />
+        <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="/js/niget.js"></script>
+        <!--<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript" >google.load("jquery", "1.4.2");</script>-->
         <title>[% app_name %] - [% page_title ? page_title : base_title %]</title>
     </head>
     <body>

@@ -15,6 +15,7 @@ sub import {
     no strict 'refs';
     *{"$pkg\::p"} = \&p;
     *{"$pkg\::now"} = \&now;
+    *{"$pkg\::js"} = \&js;
     *{"$pkg\::utf"} = \&utf;
 }
 
@@ -26,6 +27,7 @@ sub p {
 
 my $tz = DateTime::TimeZone->new( name => 'local' );
 sub now { DateTime->now(time_zone => $tz) }
+sub js  { $Niget::JS }
 sub utf { $Niget::UTF }
     
 1;

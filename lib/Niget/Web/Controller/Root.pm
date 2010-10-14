@@ -10,6 +10,7 @@ sub auto :Private {
     my ( $self, $c ) = @_;
     
     $c->stash(
+        is_dev   => $ENV{NIGET_WEB_CONFIG_LOCAL_SUFFIX} eq "development",
         videos   => Video->find_all_by(visible => 1),
         reserves => Reserve->find_all_by(visible => 1),
     );
