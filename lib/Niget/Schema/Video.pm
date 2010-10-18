@@ -12,6 +12,7 @@ __PACKAGE__->resultset_attributes({
 });
 
 belongs_to 'reserve';
+has_many 'comments';
 
 package Niget::ResultSet::Video;
 use Niget::Utils;

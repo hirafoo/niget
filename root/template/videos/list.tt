@@ -25,7 +25,9 @@
                                 [%- nico_id = v.reserve.url.split('/').-1 -%]
                                 <tr>
                                     <td>
+                                        [% UNLESS is_dev %]
                                         <img src="[% v.thumbnail_url %]" />
+                                        [%- END %]
                                     </td>
                                     <td id="video[% v.id %]">
                                         <input style="width:590px;" type="text" onclick="this.select(0,this.value.length)" value="[% v.name %]"/><br />
@@ -34,8 +36,8 @@
                                         <span style="display: block;">登録：[% date(v.created_at) %]</span><br />
                                         [% link_to('ニコニコ動画', {href => '/jump/' _ v.id, rel => 'nofollow', target => "_blank"} ) %] /
                                         [% link_to('ここで見る', {href => '/watch/' _ nico_id, target => "_blank"} ) %] /
-                                        <a href="javascript:void(0)" onclick='showCommentForm([% v.id %]); return false;'>一言つける</a> /
-                                        <a href="javascript:void(0)" onclick='show_comment([% v.id %]); return false;'>一言を見る</a>
+                                        <a href="javascript:void(0)" onclick='show_comment_form([% v.id %]); return false;'>一言つける</a> /
+                                        <a href="javascript:void(0)" onclick='show_comment([% v.id %]); return false;'>一言を見る（[% v.comment_count %]）</a>
                                         <div id="comment_form[% v.id %]"></div>
                                     </td>
                                 </tr>

@@ -12,6 +12,7 @@ View::TT:
 View::JSON:
   allow_callback: 1
   callback_param: 'cb'
+  json_driver: "JSON::XS"
 static:
   include_path:
     - __path_to(root/static)__

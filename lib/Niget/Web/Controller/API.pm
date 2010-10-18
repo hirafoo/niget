@@ -24,8 +24,16 @@ sub create_comment :Local :Args(0) {
     my ($self, $c) = @_;
 
     my $result = Comment->add($c->req->params);
-    #$result = ($result ? '投稿したよ' : '入力が空だったよ');
-    #$result = js->encode(utf->decode($result));
+
+    $c->stash(
+        result => $result
+    )
+}
+
+sub get_comment :Local :Args(0) {
+    my ($self, $c) = @_;
+
+    my $result = Comment->get($c->req->params);
 
     $c->stash(
         result => $result

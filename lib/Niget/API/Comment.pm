@@ -15,7 +15,25 @@ sub add {
         content => $comment,
     });
 
+    $video->update({comment_count => ($video->comment_count + 1)});
+
     return 1;
+}
+
+sub get {
+    my ($self, $params) = @_;
+
+    my $video_id = $params->{video_id} or return;
+    my $data = Comment->search({video_id => $video_id});
+
+    my @comments;
+    while (my $comment = $data->next) {
+        #push @comments, $comment->content;
+        #push @comments, utf->encode($comment->content);
+        push @comments, utf->decode($comment->content);
+    }
+    p \@comments;
+    return \@comments;
 }
 
 1;

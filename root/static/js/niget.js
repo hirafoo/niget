@@ -7,7 +7,7 @@ function make_req() {
     }
 }
 
-function showCommentForm(video_id) {
+function show_comment_form(video_id) {
     var form_id = "commentForm" + video_id;
     var div_id = 'comment_form' + video_id;
     var div = document.getElementById(div_id);
@@ -55,7 +55,7 @@ function showCommentForm(video_id) {
         //    comment:  comment
         //});
 
-        $(div_id).hide();
+        $("#" + div_id).hide();
         return false;
     };
     form.appendChild(input);
@@ -63,10 +63,19 @@ function showCommentForm(video_id) {
 }
 
 function show_comment(video_id) {
+    var div_id = 'comment_form' + video_id;
+    var div = document.getElementById(div_id);
+
+    $.getJSON("/api/get_comment", {video_id: video_id}, function(data) {
+        var comments = data.result;
+        $.each(comments, function() {
+            put(div, this);
+        });
+    });
 }
 
 function put(elem, text) {
     var put_text = document.createTextNode(text);
     elem.appendChild(put_text);
-    //document.body.appendChild(document.createElement('br'));
+    elem.appendChild(document.createElement('br'));
 }
