@@ -94,7 +94,6 @@ sub reserve2video {
                 $r->update({deleted => 2});
                 next;
             }
-            sleep 60;
         }
         $accounts->reset;
 
@@ -113,6 +112,7 @@ sub reserve2video {
                 thumbnail_url => $thumbnail_url,
             });
         };
+        sleep 60;
     }
 }
 
