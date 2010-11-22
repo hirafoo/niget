@@ -17,8 +17,9 @@ use URI::Escape;
 sub add {
     my ($self, $class, $params, $data) = @_;
 
+    my $qr = qr{^http://www\.nicovideo\.jp/watch/[sn]m};
     my $valid = FormValidator::Simple->check($params => [
-        url => ['NOT_BLANK', 'HTTP_URL', ['REGEX', qr{^http://www\.nicovideo\.jp/watch/}]],
+        url => ['NOT_BLANK', 'HTTP_URL', ['REGEX', $qr]],
     ]);
 
     my $msg;
@@ -103,13 +104,15 @@ sub reserve2video {
         $name = encode_utf8($name) || '名前の取得に失敗しました。。。';
         my $thumbnail_url = $xml->{thumb}->{thumbnail_url} || '';
 
-        Video->create({
-            reserve_id    => $r->id,
-            name          => $name,
-            url_economy   => $url_economy,
-            url_premium   => $url_premium,
-            thumbnail_url => $thumbnail_url,
-        });
+        eval {
+            Video->create({
+                reserve_id    => $r->id,
+                name          => $name,
+                url_economy   => $url_economy,
+                url_premium   => $url_premium,
+                thumbnail_url => $thumbnail_url,
+            });
+        };
     }
 }
 
