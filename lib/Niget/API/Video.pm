@@ -36,7 +36,7 @@ sub reget_url {
             $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $login_data );
             $ua->get($video_url);
 
-            my $res = $ua->get("http://www.nicovideo.jp/api/getflv?v=$video_id");
+            my $res = $ua->get("http://flapi.nicovideo.jp/api/getflv/$video_id");
             my $q   = CGI->new( $res->content );
             $video_url = $q->param('url') || '';
 

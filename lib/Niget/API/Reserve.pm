@@ -63,12 +63,15 @@ sub reserve2video {
     $reserves->reset;
 
     while (my $r = $reserves->next) {
+        p "reserve_id: " . $r->id;
+
         my $video_url = $r->url;
         $video_url =~ m{/(\w{0,2}\d+)};
         my $video_id = $1;
 
         my ($url_economy, $url_premium) = ('', '');
         while (my $account = $accounts->next) {
+            p "account: " . $account->mail;
 
             my $login_data = {
                 mail     => $account->mail,
@@ -78,7 +81,7 @@ sub reserve2video {
             $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $login_data );
             $ua->get($video_url);
 
-            my $res = $ua->get("http://www.nicovideo.jp/api/getflv?v=$video_id");
+            my $res = $ua->get("http://flapi.nicovideo.jp/api/getflv/$video_id");
             my $q   = CGI->new( $res->content );
             $video_url = $q->param('url');
 
