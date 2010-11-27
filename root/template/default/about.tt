@@ -20,10 +20,16 @@
                         これはニコニコ動画側の仕様なので、にげっと側ではどうにもなりません。</div>
 
                         <div class="question">Q. IEで見ると変になる個所があるんですが</div>
-                        <div class="answer">A. firefoxで見てください。</div>
+                        <div class="answer">A. そんなブラウザ知りません。</div>
 
                         <div class="question">Q. なんで「にげっと」？</div>
                         <div class="answer">A. ニコニコからゲットする、を略してにげっとです。</div>
+
+                        <div class="question">Q. 予約したのに見れない動画があるんだけど？</div>
+                        <div class="answer">A. 削除された動画や、ニコニコ動画のAPIから値を得られなかった場合などはそうなります。</div>
+
+                        <div class="question">Q. 何で5分待つの？</div>
+                        <div class="answer">A. そうでもしないとアクセス制限を食らうのです。</div>
                     </div>
                     <div class="mar10 ctitle font-b">
                         構成<br />
