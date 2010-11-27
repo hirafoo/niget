@@ -16,12 +16,16 @@ sub import {
     *{"$pkg\::p"} = \&p;
     *{"$pkg\::now"} = \&now;
     *{"$pkg\::utf"} = \&utf;
+    *{"$pkg\::say"} = \&say;
 }
 
 sub p { 
     warn Dumper @_;
     my @c = caller;
     print STDERR "  at $c[1]:$c[2]\n\n"
+}
+sub say {
+    print @_, "\n"
 }
 
 my $tz = DateTime::TimeZone->new( name => 'local' );

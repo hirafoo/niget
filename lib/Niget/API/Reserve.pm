@@ -63,7 +63,8 @@ sub reserve2video {
     $reserves->reset;
 
     while (my $r = $reserves->next) {
-        p "reserve_id: " . $r->id;
+        say "reserve_id: " . $r->id;
+        say "url: " . $r->url;
 
         my $video_url = $r->url;
         $video_url =~ m{/(\w{0,2}\d+)};
@@ -71,24 +72,30 @@ sub reserve2video {
 
         my ($url_economy, $url_premium) = ('', '');
         while (my $account = $accounts->next) {
-            p "account: " . $account->mail;
+            say "account: " . $account->mail;
 
             my $login_data = {
                 mail     => $account->mail,
                 password => $account->password,
             };
 
+            say "login niconico";
             $ua->post( "https://secure.nicovideo.jp/secure/login?site=niconico" => $login_data );
+            say "get once";
             $ua->get($video_url);
 
-            my $res = $ua->get("http://flapi.nicovideo.jp/api/getflv/$video_id");
+            my $api_video_url = "http://flapi.nicovideo.jp/api/getflv/$video_id";
+            say "get: $api_video_url";
+            my $res = $ua->get($api_video_url);
             my $q   = CGI->new( $res->content );
             $video_url = $q->param('url');
 
             if ($account->is_premium) {
+                say "premium";
                 $url_premium = $video_url;
             }
             else {
+                say "economy";
                 $url_economy = $video_url;
             }
 
@@ -97,10 +104,13 @@ sub reserve2video {
                 $r->update({deleted => 2});
                 next;
             }
+            say "next account";
         }
         $accounts->reset;
 
-        my $name = $ua->get("http://ext.nicovideo.jp/api/getthumbinfo/$video_id");
+        my $api_thumb_url = "http://ext.nicovideo.jp/api/getthumbinfo/$video_id";
+        say "get: $api_thumb_url";
+        my $name = $ua->get($api_thumb_url);
         my $xml = XMLin($name->content);
         $name = $xml->{thumb}->{title};
         $name = encode_utf8($name) || '名前の取得に失敗しました。。。';
@@ -115,6 +125,8 @@ sub reserve2video {
                 thumbnail_url => $thumbnail_url,
             });
         };
+
+        say "sleep";
         sleep 60;
     }
 }
