@@ -52,16 +52,22 @@ sub reserve2video {
             qq{at first, create account data by './script/niget_register_account.pl'\n};
     }
 
-    my $ua = LWP::UserAgent->new( keep_alive => 4 );
+    my $ua = LWP::UserAgent->new(
+        keep_alive => 4,
+        timeout => 3,
+    );
     $ua->cookie_jar( {} );
 
     my $reserves = $self->find_all_by(visible => 1);
+    my $reserves_count = 0;
 
     while (my $n = $reserves->next) {
         $n->update({visible => 0});
+        $reserves_count++;
     }
     $reserves->reset;
 
+    my $loop_count = 0;
     while (my $r = $reserves->next) {
         say "reserve_id: " . $r->id;
         say "url: " . $r->url;
@@ -89,6 +95,7 @@ sub reserve2video {
             my $res = $ua->get($api_video_url);
             my $q   = CGI->new( $res->content );
             $video_url = $q->param('url');
+            say "url: $video_url";
 
             if ($account->is_premium) {
                 say "premium";
@@ -101,7 +108,7 @@ sub reserve2video {
 
             unless ($video_url) {
                 p "failed to get video info: " . $res->content. "delete this data.";
-                $r->update({deleted => 2});
+                $r->update({visible => 1});
                 next;
             }
             say "next account";
@@ -115,6 +122,7 @@ sub reserve2video {
         $name = $xml->{thumb}->{title};
         $name = encode_utf8($name) || '名前の取得に失敗しました。。。';
         my $thumbnail_url = $xml->{thumb}->{thumbnail_url} || '';
+        say "image: $thumbnail_url";
 
         eval {
             Video->create({
@@ -126,8 +134,11 @@ sub reserve2video {
             });
         };
 
-        say "sleep";
-        sleep 60;
+        $loop_count++;
+        if ($loop_count != $reserves_count) {
+            say "sleep";
+            sleep 30;
+        }
     }
 }
 
