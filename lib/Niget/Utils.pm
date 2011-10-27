@@ -19,7 +19,7 @@ sub import {
     *{"$pkg\::say"} = \&say;
 }
 
-sub p { 
+sub p {
     warn Dumper @_;
     my @c = caller;
     print STDERR "  at $c[1]:$c[2]\n\n"
@@ -31,5 +31,5 @@ sub say {
 my $tz = DateTime::TimeZone->new( name => 'local' );
 sub now { DateTime->now(time_zone => $tz) }
 sub utf { $Niget::UTF }
-    
+
 1;

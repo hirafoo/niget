@@ -25,7 +25,7 @@ sub list :Chained('class') :PathPart :Args(0) {
 
     my $result = Model($Class)->list($class, $params, $data);
 
-    $c->stash( 
+    $c->stash(
         page_title => '一覧',
         data     => $result->{data},
         pager    => $result->{pager},

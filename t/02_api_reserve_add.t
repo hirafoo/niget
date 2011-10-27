@@ -17,7 +17,7 @@ __END__
 
 === blank input
 --- input
-url: 
+url:
 --- expected
 msg: 何か変なURLだよ！
 

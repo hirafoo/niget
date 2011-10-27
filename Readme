@@ -35,7 +35,7 @@ rake db:create; rake db:migrate
 
 =head1 AUTHOR
 
-foosin 
+foosin
 
 web -> http://d.hatena.ne.jp/foosin/
 

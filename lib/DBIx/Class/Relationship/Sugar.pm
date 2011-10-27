@@ -45,7 +45,7 @@ sub belongs_to {
 
     $cond ||= {id => "$rel\_id"};
     $f_class = $base_schema . $f_class;
-    
+
     $class->next::method($rel, $f_class, $cond, $attrs);
 }
 
