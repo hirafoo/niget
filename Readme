@@ -35,10 +35,10 @@ rake db:create; rake db:migrate
 
 =head1 AUTHOR
 
-foosin 
+foosin
 
 web -> http://d.hatena.ne.jp/foosin/
 
-mail -> hirafoo@gmail.com
+mail -> hirafoo at mk gmail dot com
 
 =cut
