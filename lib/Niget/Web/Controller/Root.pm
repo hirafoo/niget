@@ -8,7 +8,7 @@ __PACKAGE__->config->{namespace} = '';
 
 sub auto :Private {
     my ( $self, $c ) = @_;
-    
+
     $c->stash(
         videos   => Video->find_all_by(visible => 1),
         reserves => Reserve->find_all_by(visible => 1),

@@ -13,5 +13,5 @@ production:
   database: niget
   pool: 5
   username: root
-  password: 
+  password:
   socket: /var/lib/mysql/mysql.sock

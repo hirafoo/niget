@@ -1,11 +1,11 @@
 #!/usr/bin/perl -w
 
-BEGIN { 
+BEGIN {
     $ENV{CATALYST_ENGINE} ||= 'HTTP';
     $ENV{CATALYST_SCRIPT_GEN} = 31;
     $ENV{NIGET_WEB_CONFIG_LOCAL_SUFFIX} ||= 'development';
     require Catalyst::Engine::HTTP;
-}  
+}
 
 use strict;
 use warnings;
